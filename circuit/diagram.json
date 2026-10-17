@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "author": "",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -100, "left": -180, "attrs": {} },
+    {
+      "type": "wokwi-servo",
+      "id": "s1",
+      "top": -270.8,
+      "left": 355.2,
+      "attrs": { "hornColor": "red" }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "s2",
+      "top": -366.8,
+      "left": 316.8,
+      "attrs": { "hornColor": "orange" }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "s3",
+      "top": -405.2,
+      "left": 614.4,
+      "attrs": { "hornColor": "yellow" }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "s4",
+      "top": 180,
+      "left": 220,
+      "attrs": { "hornColor": "green" }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "s5",
+      "top": 7.6,
+      "left": 336,
+      "attrs": { "hornColor": "blue" }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "s6",
+      "top": -136.4,
+      "left": 489.6,
+      "attrs": { "hornColor": "violet" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:13", "s1:PWM", "green", [ "h-30", "v-320", "h380" ] ],
+    [ "esp:14", "s2:PWM", "cyan", [ "h-40", "v-340", "h660" ] ],
+    [ "esp:27", "s3:PWM", "magenta", [ "h-50", "v-360", "h940" ] ],
+    [ "esp:26", "s4:PWM", "orange", [ "h-30", "v240", "h380" ] ],
+    [ "esp:25", "s5:PWM", "purple", [ "h-40", "v260", "h660" ] ],
+    [ "esp:33", "s6:PWM", "gold", [ "h-50", "v280", "h940" ] ],
+    [ "s1:V+", "esp:5V", "red", [ "v-20", "h-200", "v300" ] ],
+    [ "s2:V+", "esp:5V", "red", [ "v-30", "h-480", "v310" ] ],
+    [ "s3:V+", "esp:5V", "red", [ "v-40", "h-760", "v320" ] ],
+    [ "s4:V+", "esp:5V", "red", [ "v-20", "h-200" ] ],
+    [ "s5:V+", "esp:5V", "red", [ "v-30", "h-480" ] ],
+    [ "s6:V+", "esp:5V", "red", [ "v-40", "h-760" ] ],
+    [ "s1:GND", "esp:GND.1", "black", [ "v-10", "h-190" ] ],
+    [ "s2:GND", "esp:GND.1", "black", [ "v-15", "h-470" ] ],
+    [ "s3:GND", "esp:GND.1", "black", [ "v-25", "h-750" ] ],
+    [ "s4:GND", "esp:GND.2", "black", [ "v-10", "h-190" ] ],
+    [ "s5:GND", "esp:GND.2", "black", [ "v-15", "h-470" ] ],
+    [ "s6:GND", "esp:GND.2", "black", [ "v-25", "h-750" ] ]
+  ],
+  "dependencies": {}
+}
